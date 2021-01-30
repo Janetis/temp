@@ -4,8 +4,8 @@ use warnings;
 
 
 ###################################################
-	open my $fh,"../result/Mo_result_samples226/hitdata_0913_delCd_min_match.txt" or die $!;
-	open my $out,">../result/Mo_result_samples226/hitdata_0913_delCd_min_match_filter.txt" or die $!;
+	open my $fh,"$out_dir/hitdata_0913_delCd_min_match.txt" or die $!;
+	open my $out,">$out_dir/hitdata_0913_delCd_min_match_filter.txt" or die $!;
 	my %hash;
 	my %hash_sec;
 	while(<$fh>){

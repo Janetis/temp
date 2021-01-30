@@ -4,7 +4,7 @@ use warnings;
 
 #
 #######step 1#########
-open my $fh2,"../result/Cu_result_samples226/mimazi.txt" or die $!;
+open my $fh2,"$out_dir/mimazi.txt" or die $!;
 
 my %hash_mi;
 
@@ -28,8 +28,8 @@ while(<$fh>){
 }
 
 
-open my $fh1,"../result/Cu_result_samples226/other_less3_0721_more50.txt" or die $!;
-open my $out,">../result/Cu_result_samples226/for_ligands0721.txt" or die $!;
+open my $fh1,"$out_dir/other_less3_0721_more50.txt" or die $!;
+open my $out,">$out_dir/for_ligands0721.txt" or die $!;
 
 while(<$fh1>){
 	s/\v//g;

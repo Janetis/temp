@@ -4,7 +4,7 @@ use strict;
 	
 #
 	###################step3#########################################W
-open my $fh,"../result/Cu_result_samples226/for_ligands_longer0721.txt" or die $!;
+open my $fh,"$out_dir/for_ligands_longer0721.txt" or die $!;
 
 my @lines =map{chomp;$_}<$fh>;
 my @headers = split("\t",shift @lines);
@@ -17,7 +17,7 @@ my @headers = split("\t",shift @lines);
 
 
 }@lines;
-open OUT,">../result/Cu_result_samples226/for_ligands_longer_E0721.txt" or die $!;
+open OUT,">$out_dir/for_ligands_longer_E0721.txt" or die $!;
 my $header = join("\t",@headers);
 print OUT "$header\n";
 my $p_key = '';

@@ -2,8 +2,8 @@
 use strict;
 use warnings;
 
-open my $fh,"../result/Mo_result_samples226/length50more_ppos20more_0721_all_result.txt" or die $!;
-open my $out,">../result/Mo_result_samples226/fdhA_Mo226_0721.txt" or die $!;
+open my $fh,"$out_dir/length50more_ppos20more_0721_all_result.txt" or die $!;
+open my $out,">$out_dir/fdhA_Mo226_0721.txt" or die $!;
 while(<$fh>){
 	s/\v//g;
 	my @line = split("\t",$_);

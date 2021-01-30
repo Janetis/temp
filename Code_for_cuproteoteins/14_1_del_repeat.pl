@@ -4,8 +4,8 @@ use warnings;
 
 
 ######step1########
-open my $fh,"../result/Cu_result_samples226/hitdata_0721_full_del.txt" or die $!;
-open my $out,">../result/Cu_result_samples226/chongfu.txt" or die $!;
+open my $fh,"$out_dir/hitdata_0721_full_del.txt" or die $!;
+open my $out,">$out_dir/chongfu.txt" or die $!;
 
 my %hash;
 

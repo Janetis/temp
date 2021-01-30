@@ -3,8 +3,8 @@ use strict;
 use warnings;
 
 
-	open my $fh,"../result/Ni_result_samples226/hitdata_0913_match_all_full.txt" or die $!;
-	open my $out,">../result/Ni_result_samples226/temp.txt" or die $!;
+	open my $fh,"$out_dir/hitdata_0913_match_all_full.txt" or die $!;
+	open my $out,">$out_dir/temp.txt" or die $!;
 	my %hash;
 	while(<$fh>){
 		s/\v//g;

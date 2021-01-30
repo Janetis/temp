@@ -5,7 +5,7 @@ use warnings;
 
 
 	##########################################################W
-open my $fh,"../result/Ni_result_samples226/other_less3_0721_longer.txt" or die $!;
+open my $fh,"$out_dir/other_less3_0721_longer.txt" or die $!;
 
 my @lines =map{chomp;$_}<$fh>;
 my @headers = split("\t",shift @lines);
@@ -18,7 +18,7 @@ my @headers = split("\t",shift @lines);
 
 
 }@lines;
-open OUT,">../result/Ni_result_samples226/other_less3_0721_longer_E.txt" or die $!;
+open OUT,">$out_dir/other_less3_0721_longer_E.txt" or die $!;
 my $header = join("\t",@headers);
 print OUT "$header\n";
 my $p_key = '';

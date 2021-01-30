@@ -3,9 +3,9 @@ use strict;
 use warnings;
 
 #########for bac#####
-open my $fh,"../result/Cu_result_samples226/other_less3_0721.txt" or die $!;
-open my $out,">../result/Cu_result_samples226/other_less3_0721_delz.txt" or die $!;
-open my $out1,">../result/Cu_result_samples226/zzz.txt" or die $!;
+open my $fh,"$out_dir/other_less3_0721.txt" or die $!;
+open my $out,">$out_dir/other_less3_0721_delz.txt" or die $!;
+open my $out1,">$out_dir/zzz.txt" or die $!;
 while(<$fh>){
 	s/\v//g;
 	my @line = split("\t",$_);

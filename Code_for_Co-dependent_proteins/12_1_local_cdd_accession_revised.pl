@@ -12,8 +12,8 @@ while(<$fh>){
 	my @line = split("\t",$_);
 	$hash{$line[0]} = $line[1];
 }
-open my $fh1,"../result/Co_result_samples226/hitdata_0721_all.out" or die $!;
-open my $out,">../result/Co_result_samples226/hitdata_0721_arr.txt" or die $!;
+open my $fh1,"$out_dir/hitdata_0721_all.out" or die $!;
+open my $out,">$out_dir/hitdata_0721_arr.txt" or die $!;
 
 while(<$fh1>){
 	s/\v//g;

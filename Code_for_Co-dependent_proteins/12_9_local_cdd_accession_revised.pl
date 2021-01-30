@@ -5,8 +5,8 @@ use warnings;
 
 #
 ##########################
-open my $fh,"../result/Co_result_samples226/hitdata_0721_delCd_sec_min_sort_min.txt" or die $!;
-open my $out,">../result/Co_result_samples226/hitdata_0721_delCd_sec_min_match.txt" or die $!;
+open my $fh,"$out_dir/hitdata_0721_delCd_sec_min_sort_min.txt" or die $!;
+open my $out,">$out_dir/hitdata_0721_delCd_sec_min_match.txt" or die $!;
 while(<$fh>){
 	s/\v//g;
 	my @line = split("\t",$_);

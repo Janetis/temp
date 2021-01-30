@@ -4,8 +4,8 @@ use warnings;
 
 
 ####################翻译含有stop codon的结果#######
-open my $fh,"../result/Mo_result_samples226/ppos20more_0721_minus40_less3.txt" or die $!;
-open my $out,">../result/Mo_result_samples226/trans_0721less3.txt" or die $!;
+open my $fh,"$out_dir/ppos20more_0721_minus40_less3.txt" or die $!;
+open my $out,">$out_dir/trans_0721less3.txt" or die $!;
 
 while(<$fh>){
 	my @asteri_pos;
@@ -14,16 +14,12 @@ while(<$fh>){
 	s/\v//g;
 	my @line = split("\t",$_);
 	my $head = $_;
-	####提取出文件名
 	my $myfile;
 	if($line[1] =~ /,(GS\w+)/){
 		$myfile = $1;
 	}
-#
-	####存入核酸序列，用于翻译
 	my %hash;
 	my $key;
-	##
 	open my $fh1,"../runCA_226asm_arr/$myfile/$myfile.fasta" or die $!;
 	while(<$fh1>){
 		s/\v//g;
@@ -34,8 +30,7 @@ while(<$fh>){
 		}
 	}
 	close $fh1;
-	##
-	my @letter_query = split("",$line[15]);				#处理aligned_query_seq和aligned_subject_seq
+	my @letter_query = split("",$line[15]);				
 	my @letter_subject = split("",$line[16]);
 	my $k;
 	if (defined( $line[8] ) && $line[8] > 0 ){

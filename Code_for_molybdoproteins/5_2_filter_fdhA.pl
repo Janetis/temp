@@ -9,9 +9,9 @@ use Data::Dumper;
  #del_zzz.pl####del_TAG_TAA.pl####
  #########################################
  
- open my $fh,"../result/Mo_result_samples226/other_less3_fdhA_0721.txt" or die $!;
-open my $out,">../result/Mo_result_samples226/other_less3_fdhA_0721_delz.txt" or die $!;
-open my $out1,">../result/Mo_result_samples226/zzz.txt" or die $!;
+ open my $fh,"$out_dir/other_less3_fdhA_0721.txt" or die $!;
+open my $out,">$out_dir/other_less3_fdhA_0721_delz.txt" or die $!;
+open my $out1,">$out_dir/zzz.txt" or die $!;
 while(<$fh>){
 	s/\v//g;
 	my @line = split("\t",$_);

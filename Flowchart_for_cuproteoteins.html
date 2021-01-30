@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Work Flow</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+      mermaid.initialize({
+          theme: 'default',
+          startOnLoad:true
+      });
+  </script>
+  <div class="mermaid" align="center">
+    graph TB
+
+    query["query.fasta"]
+	ligands_result["cuproteotein seqs that contain certain ligands"]
+	seqs_in_fasta_format["seqs_in_fasta_format_that_<br/>are_ready_to_RPSBLAST_against_cdd"]
+	cdd_result["seqs_that_contain_<br/>specific_conserved_domian"]
+
+	
+    1_tblastn{1_tblastn}
+	2_translation{"2_translation for<br/>normal tblastn result"}
+	3_select_asteri{"3_select_asteri and<br/> 4_translation_stop_less3<br/>for 3 less *-containing tbalstn result"}
+	5_combine_two{"5_combine_two<br/>6_del_zzz"}
+	7_select_ligands{"7_select_ligands<br/>8_filter20160329"}
+	9_to_fasta{"9_to_fasta"}
+	10_for_rpsblast{"10_for_rpsblast<br/>11_split_fasta"}
+	12_check_hitdata{"12_check_hitdata<br/>13_local_cdd_accession"}
+	14_del_repeat{"14_del_repeat<br/>15_del_sstart_send"}
+	16_statistics{16_count1<br/>17_count2}
+
+
+
+	
+
+    query --> 1_tblastn
+    dataset --> 1_tblastn
+    1_tblastn --> tblastn_result
+
+    dataset --> 2_translation
+    tblastn_result --> 2_translation
+    2_translation --> 5_combine_two
+	tblastn_result --> 3_select_asteri
+	dataset --> 3_select_asteri
+	3_select_asteri --> 5_combine_two
+	5_combine_two --> qualified_translation_result
+	qualified_translation_result --> 7_select_ligands
+	7_select_ligands --> ligands_result
+	ligands_result --> 9_to_fasta
+	9_to_fasta --> seqs_in_fasta_format
+	seqs_in_fasta_format --> 10_for_rpsblast
+	10_for_rpsblast --> rpsblast_result
+	rpsblast_result --> 12_check_hitdata
+	12_check_hitdata --> cdd_result
+	cdd_result --> 14_del_repeat
+	14_del_repeat --> filter_to_get_nonredundant_seqs
+	filter_to_get_nonredundant_seqs --> 16_statistics 
+	16_statistics --> statistical_result 
+
+
+
+
+    classDef action fill:#f96,stroke:#333,stroke-width:4px;
+    class 1_tblastn,2_translation,3_select_asteri,5_combine_two,7_select_ligands,9_to_fasta,10_for_rpsblast,12_check_hitdata,14_del_repeat,16_statistics action;
+
+  </div>
+</body>
+</html>

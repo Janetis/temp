@@ -4,16 +4,16 @@ use warnings;
 
 
 #########
-open FILE,"../result/Co_result_samples226/test_chongfu.txt" or die $!;
-open OUT,">../result/Co_result_samples226/test_chongfu_full.txt" or die $!;
-open OUTII,">../result/Co_result_samples226/not_chongfu.txt" or die $!;
+open FILE,"$out_dir/test_chongfu.txt" or die $!;
+open OUT,">$out_dir/test_chongfu_full.txt" or die $!;
+open OUTII,">$out_dir/not_chongfu.txt" or die $!;
 my %hash;
 while(<FILE>){
 	s/\v//g;
 	$hash{$_} = 2;
 }
 close FILE;
-open FILEII,"../result/Co_result_samples226/hitdata_0721_full_del_repeat.txt" or die $!;
+open FILEII,"$out_dir/hitdata_0721_full_del_repeat.txt" or die $!;
 while(<FILEII>){
 	s/\v//g;
 	my @hang = split("\t",$_);

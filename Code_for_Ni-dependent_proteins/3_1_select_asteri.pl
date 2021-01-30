@@ -4,9 +4,9 @@ use warnings;
 
 
 #########################step1#####
-open my $fh,"../result/Ni_result_samples226/length50more_ppos20more_0721_all_result.txt" or die $!;
-open my $out,">../result/Ni_result_samples226/ppos20more_0721_stop.txt" or die $!;
-open my $out1,">../result/Ni_result_samples226/ppos20more_0721_other.txt" or die $!;
+open my $fh,"$out_dir/length50more_ppos20more_0721_all_result.txt" or die $!;
+open my $out,">$out_dir/ppos20more_0721_stop.txt" or die $!;
+open my $out1,">$out_dir/ppos20more_0721_other.txt" or die $!;
 
 while(<$fh>){
 	s/\v//g;

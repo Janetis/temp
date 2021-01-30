@@ -5,8 +5,8 @@ use warnings;
 
 #
 #########step3##########在每一个数据库里面（COG,pfam,PRK,TIGR）挑选一个e value最小的accession###step1####
-open my $fh1,"../result/Mo_result_samples226/hitdata_0721_delCd.txt" or die $!;
-open my $out,">../result/Mo_result_samples226/hitdata_0913_delCd_min.txt" or die $!;
+open my $fh1,"$out_dir/hitdata_0721_delCd.txt" or die $!;
+open my $out,">$out_dir/hitdata_0913_delCd_min.txt" or die $!;
 my %hash;
 my %hash_e;
 my %hash_acc;

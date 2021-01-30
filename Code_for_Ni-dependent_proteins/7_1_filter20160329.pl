@@ -3,9 +3,9 @@ use strict;
 use warnings;
 
 #############################氨基酸少于50个的蛋白剔除掉
-open my $fh,"../result/Ni_result_samples226/other_less3_0721_delz.txt" or die $!;
-open my $out,">../result/Ni_result_samples226/other_less3_0721_delz_rename.txt" or die $!;
-open my $out2,">../result/Ni_result_samples226/temp.txt" or die $!;
+open my $fh,"$out_dir/other_less3_0721_delz.txt" or die $!;
+open my $out,">$out_dir/other_less3_0721_delz_rename.txt" or die $!;
+open my $out2,">$out_dir/temp.txt" or die $!;
 
 my %hash;
 while(<$fh>){

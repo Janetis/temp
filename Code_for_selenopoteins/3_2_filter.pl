@@ -5,7 +5,7 @@ use File::Basename;
 use Data::Dumper;
 
 
-open FILE,"../result/Se_result_samples226/pick_Se_20170721_arr.txt" or die $!;
+open FILE,"$out_dir/pick_Se_20170721_arr.txt" or die $!;
  my @lines = map{s/\v//g;$_} <FILE>;
  my @headers = split("\t", shift @lines);
  @lines = map{my %temp; @temp{@headers} = split /\t/; \%temp } @lines;
@@ -18,7 +18,7 @@ open FILE,"../result/Se_result_samples226/pick_Se_20170721_arr.txt" or die $!;
  } @lines;
 
  # @headers = @headers[0,1,8,16,9,2..7,10..15,17,18];
- open OUT,">../result/Se_result_samples226/pick_Se_20170721filter.txt" or die $!;
+ open OUT,">$out_dir/pick_Se_20170721filter.txt" or die $!;
  print OUT join("\t", @headers) . "\n";
  my $p_key = '';
 

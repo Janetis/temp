@@ -4,8 +4,8 @@ use warnings;
 use File::Basename;
 use Data::Dumper;
 
-open my $fh,"../result/Se_result_samples226/pick_Se_20170721.txt" or die $!;
-open my $out,">../result/Se_result_samples226/pick_Se_20170721_arr.txt" or die $!;
+open my $fh,"$out_dir/pick_Se_20170721.txt" or die $!;
+open my $out,">$out_dir/pick_Se_20170721_arr.txt" or die $!;
 
 while(<$fh>){
 	s/\v//g;

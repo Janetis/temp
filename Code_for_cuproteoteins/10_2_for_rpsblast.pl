@@ -1,11 +1,11 @@
 #!perl
 use strict;
 use warnings;
-use lib "/home/xyz/xyz";
-use myfile;
+use lib dirname(__FILE__);
+use Miscellany qw( list_all_files );
 
 
-#######################shell all#########
+
 open my $out,">Cu_rpsblast_0721.sh" or die $!;
 for my $file(grep{m/\/rpsblast/}list_all_files("for_rpsblast_pl0721_Cu226")){
 	my $name;

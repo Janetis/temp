@@ -2,8 +2,8 @@
 use strict;
 use warnings;
 
-open my $fh,"../result/Se_result_samples226/blastp_nr_non_UU_order20170721.txt" or die $!;
-open my $out,">../result/Se_result_samples226/blastp_nr_non_UU20170721_order20.txt" or die $!;
+open my $fh,"$out_dir/blastp_nr_non_UU_order20170721.txt" or die $!;
+open my $out,">$out_dir/blastp_nr_non_UU20170721_order20.txt" or die $!;
 my $n = 0;
 my $pre = '';
 while(<$fh>){

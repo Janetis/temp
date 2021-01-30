@@ -7,8 +7,8 @@ use Data::Dumper;
 
 
 ###################
-open my $fh,"../result/Se_result_samples226/non_UU.txt" or die $!;
-open my $out,">../result/Se_result_samples226/non_UU_arr20170721.txt" or die $!;
+open my $fh,"$out_dir/non_UU.txt" or die $!;
+open my $out,">$out_dir/non_UU_arr20170721.txt" or die $!;
 
 while(<$fh>){
 	s/\v//g;

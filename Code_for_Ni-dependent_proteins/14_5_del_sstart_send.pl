@@ -5,7 +5,7 @@ use warnings;
 
 
 	###########################
-open my $fh,"../result/Ni_result_samples226/test_chongfu_full_F.txt" or die $!;
+open my $fh,"$out_dir/test_chongfu_full_F.txt" or die $!;
 
 my %hash;
 my @array;
@@ -21,8 +21,8 @@ for my $key(keys %hash){
 }
 print "$m\n";
 
-open my $fh1,"../result/Ni_result_samples226/test_chongfu_full_sort.txt" or die $!;
-open my $out,">../result/Ni_result_samples226/test_chongfu_full_sort_arr.txt" or die $!;
+open my $fh1,"$out_dir/test_chongfu_full_sort.txt" or die $!;
+open my $out,">$out_dir/test_chongfu_full_sort_arr.txt" or die $!;
 
 while(<$fh1>){
 	s/\v//g;

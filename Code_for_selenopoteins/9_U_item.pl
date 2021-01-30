@@ -2,9 +2,9 @@
 use strict;
 use warnings;
 
-open my $fh,"../result/Se_result_samples226/blastp_nr_20170721.out" or die $!;
-open my $out,">../result/Se_result_samples226/blastp_nr_20170721_U.out" or die $!;
-open my $out1,">../result/Se_result_samples226/blastp_nr_20170721_U_else.out" or die $!;
+open my $fh,"$out_dir/blastp_nr_20170721.out" or die $!;
+open my $out,">$out_dir/blastp_nr_20170721_U.out" or die $!;
+open my $out1,">$out_dir/blastp_nr_20170721_U_else.out" or die $!;
 
 my $m = 0;
 my $n = 0;

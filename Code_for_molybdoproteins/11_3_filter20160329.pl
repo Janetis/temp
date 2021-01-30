@@ -1,9 +1,7 @@
 #!perl
 
 
-
-	###################step3#########################################W
-open my $fh,"../result/Mo_result_samples226/other_less3_fdhA_0721_longer.txt" or die $!;
+open my $fh,"$out_dir/other_less3_fdhA_0721_longer.txt" or die $!;
 
 my @lines =map{chomp;$_}<$fh>;
 my @headers = split("\t",shift @lines);
@@ -16,14 +14,9 @@ my @headers = split("\t",shift @lines);
 
 
 }@lines;
-open OUT,">../result/Mo_result_samples226/other_less3_fdhA_0721_longer_E.txt" or die $!;
+open OUT,">$out_dir/other_less3_fdhA_0721_longer_E.txt" or die $!;
 my $header = join("\t",@headers);
 print OUT "$header\n";
-####
-	#for my $i(@lines){
-		#print OUT join("\t",@$i{@headers})."\n";
-	#}
-#####
 my $p_key = '';
 for my $i(@lines){
 	my $key = join("",@$i{'sseqid','sframe','end_of_Mo_in_read'});

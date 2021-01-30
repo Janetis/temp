@@ -3,10 +3,7 @@ use strict;
 use warnings;
 
 
-#
-
-########## get.pl##########3
-open FILE,"../result/Mo_result_samples226/other_less3_fdhA_0721_num.txt" or die $!;
+open FILE,"$out_dir/other_less3_fdhA_0721_num.txt" or die $!;
 my %hash;
 while(<FILE>){
 	s/\v//g;
@@ -24,8 +21,8 @@ while(<FILE>){
 
 close FILE;
 
-open FILEII,"../result/Mo_result_samples226/hitdata_0913_match_all_del.txt" or die $!;
-open OUT,">../result/Mo_result_samples226/hitdata_0913_match_all_full.txt" or die $!;
+open FILEII,"$out_dir/hitdata_0913_match_all_del.txt" or die $!;
+open OUT,">$out_dir/hitdata_0913_match_all_full.txt" or die $!;
 while(<FILEII>){
 	s/\v//g;
 	my @line = split("\t",$_);

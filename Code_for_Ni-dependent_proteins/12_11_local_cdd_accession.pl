@@ -6,7 +6,7 @@ use warnings;
 
 
 ########### get.pl##########step11
-open FILE,"../result/Ni_result_samples226/other_less3_0721_num.txt" or die $!;
+open FILE,"$out_dir/other_less3_0721_num.txt" or die $!;
 my %hash;
 while(<FILE>){
 	s/\v//g;
@@ -18,8 +18,8 @@ while(<FILE>){
 
 close FILE;
 
-open FILEII,"../result/Ni_result_samples226/hitdata_0913_match_all.txt" or die $!;
-open OUT,">../result/Ni_result_samples226/hitdata_0913_match_all_full.txt" or die $!;
+open FILEII,"$out_dir/hitdata_0913_match_all.txt" or die $!;
+open OUT,">$out_dir/hitdata_0913_match_all_full.txt" or die $!;
 while(<FILEII>){
 	s/\v//g;
 	my @line = split("\t",$_);

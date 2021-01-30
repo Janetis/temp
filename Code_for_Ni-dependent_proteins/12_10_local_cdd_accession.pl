@@ -6,6 +6,6 @@ use warnings;
 
 
 ###########合并#######step10
-`cat "../result/Ni_result_samples226/hitdata_0913_delCd_min_match_filter.txt" "../result/Ni_result_samples226/hitdata_0913_delCd_sec_min_match.txt" > "../result/Ni_result_samples226/hitdata_0913_match_all.txt"`
+`cat "$out_dir/hitdata_0913_delCd_min_match_filter.txt" "$out_dir/hitdata_0913_delCd_sec_min_match.txt" > "$out_dir/hitdata_0913_match_all.txt"`
 
 

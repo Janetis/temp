@@ -4,7 +4,6 @@ use warnings;
 use lib "/home/xyz/xyz";
 use myfile;
 
-######################shell all#########
 
 open my $out,">Co_rpsblast_0721.sh" or die $!;
 for my $file(grep{m/\/rpsblast/}list_all_files("for_rpsblast_pl0721_Co226")){

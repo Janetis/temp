@@ -4,8 +4,8 @@ use warnings;
 
 ###########################################
 
-open my $fh,"../result/Cu_result_samples226/test_chongfu_full.txt" or die $!;
-open my $out,">../result/Cu_result_samples226/test_chongfu_full_sort.txt" or die $!;
+open my $fh,"$out_dir/test_chongfu_full.txt" or die $!;
+open my $out,">$out_dir/test_chongfu_full_sort.txt" or die $!;
 
 my @lines = map{s/\v//g;$_}<$fh>;
 my @headers = split("\t",shift @lines);

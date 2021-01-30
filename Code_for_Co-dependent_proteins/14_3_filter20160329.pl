@@ -4,7 +4,7 @@ use warnings;
 
 
 	#######################step3####################################W
-open my $fh,"../result/Co_result_samples226/other_less3_0721_delz_longer.txt" or die $!;
+open my $fh,"$out_dir/other_less3_0721_delz_longer.txt" or die $!;
 
 my @lines =map{chomp;$_}<$fh>;
 my @headers = split("\t",shift @lines);
@@ -17,7 +17,7 @@ my @headers = split("\t",shift @lines);
 
 
 }@lines;
-open OUT,">../result/Co_result_samples226/other_less3_0721_delz_longer_E.txt" or die $!;
+open OUT,">$out_dir/other_less3_0721_delz_longer_E.txt" or die $!;
 my $header = join("\t",@headers);
 print OUT "$header\n";
 my $p_key = '';

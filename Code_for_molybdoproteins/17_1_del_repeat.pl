@@ -3,9 +3,8 @@ use strict;
 use warnings;
 
 
-#####step1########
-open my $fh,"../result/Mo_result_samples226/hitdata_0913_full_del.txt" or die $!;
-open my $out,">../result/Mo_result_samples226/chongfu.txt" or die $!;
+open my $fh,"$out_dir/hitdata_0913_full_del.txt" or die $!;
+open my $out,">$out_dir/chongfu.txt" or die $!;
 
 my %hash;
 

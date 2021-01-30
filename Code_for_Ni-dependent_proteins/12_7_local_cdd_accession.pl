@@ -6,8 +6,8 @@ use warnings;
 
 
 ##################sort######step7
-open my $fh,"../result/Ni_result_samples226/hitdata_0913_delCd_sec_min.txt" or die $!;
-open my $out,">../result/Ni_result_samples226/hitdata_0913_delCd_sec_min_sort.txt" or die $!;
+open my $fh,"$out_dir/hitdata_0913_delCd_sec_min.txt" or die $!;
+open my $out,">$out_dir/hitdata_0913_delCd_sec_min_sort.txt" or die $!;
 
 my @lines = map{s/\v//g;$_}<$fh>;
 my @headers = split("\t",shift @lines);

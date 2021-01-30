@@ -2,9 +2,9 @@
 use strict;
 use warnings;
 
-open my $fh,"../result/Mo_result_samples226/other_less3_fdhA_0721_longer_E.txt" or die $!;
-open my $out,">../result/Mo_result_samples226/other_less3_fdhA_0721_num.txt" or die $!;
-open my $out1,">../result/Mo_result_samples226/other_less3_fdhA_0721.fasta" or die $!;
+open my $fh,"$out_dir/other_less3_fdhA_0721_longer_E.txt" or die $!;
+open my $out,">$out_dir/other_less3_fdhA_0721_num.txt" or die $!;
+open my $out1,">$out_dir/other_less3_fdhA_0721.fasta" or die $!;
 
 my $n = 0;
 my $m = 0;

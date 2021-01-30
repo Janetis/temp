@@ -5,7 +5,7 @@ use warnings;
 
 #
 #######################################3
-open my $fh,"../result/Mo_result_samples226/hitdata_0913_delCd_min.txt" or die $!;
+open my $fh,"$out_dir/hitdata_0913_delCd_min.txt" or die $!;
 
 my %hash;
 my %hash_two;
@@ -20,8 +20,8 @@ while(<$fh>){
 		$hash{$line[0]}{$line[2]} = 1;
 	}
 }
-open my $fh2,"../result/Mo_result_samples226/hitdata_0913_delCd_min.txt" or die $1;
-open my $out,">../result/Mo_result_samples226/hitdata_0913_delCd_sec_min.txt" or die $!;
+open my $fh2,"$out_dir/hitdata_0913_delCd_min.txt" or die $1;
+open my $out,">$out_dir/hitdata_0913_delCd_sec_min.txt" or die $!;
 print $out "Mo_protein\taccession\tevalue\n";
 
 while(<$fh2>){

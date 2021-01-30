@@ -3,9 +3,8 @@ use strict;
 use warnings;
 
 
-#################取每个蛋白中evalue最小的那一个#######step8
-open my $fh,"../result/Cu_result_samples226/hitdata_0721_delCd_sec_min_sort.txt" or die $!;
-open my $out,">../result/Cu_result_samples226/hitdata_0721_delCd_sec_min_sort_min.txt" or die $!;
+open my $fh,"$out_dir/hitdata_0721_delCd_sec_min_sort.txt" or die $!;
+open my $out,">$out_dir/hitdata_0721_delCd_sec_min_sort_min.txt" or die $!;
 
 my $flag = '';
 while(<$fh>){

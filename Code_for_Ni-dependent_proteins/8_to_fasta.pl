@@ -4,9 +4,9 @@ use warnings;
 
 
 	########################3
-open my $fh,"../result/Ni_result_samples226/other_less3_0721_longer_E.txt" or die $!;
-open my $out,">../result/Ni_result_samples226/other_less3_0721_num.txt" or die $!;
-open my $out1,">../result/Ni_result_samples226/other_less3_0721_E.fasta" or die $!;
+open my $fh,"$out_dir/other_less3_0721_longer_E.txt" or die $!;
+open my $out,">$out_dir/other_less3_0721_num.txt" or die $!;
+open my $out1,">$out_dir/other_less3_0721_E.fasta" or die $!;
 
 my $n = 0;
 my $m = 0;

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Work Flow</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+      mermaid.initialize({
+          theme: 'default',
+          startOnLoad:true
+      });
+  </script>
+  <div class="mermaid" align="center">
+    graph TB
+
+    query["query.fasta"]
+	filter_result["filter_to_get_nonredundant_tblastn_result"]
+	del_the_TAG_TAA_coded_result["del_the_TAG_TAA_coded_result"]
+	del_zzzzzzz["protein_seqs_in_an_ORF"]
+	seqs_in_fasta_format["seqs_in_fasta_format_that_are_ready_to_BLASTP_against_nr"]
+	blastp_result["blastp_against_nr_result<br/>to_confirm_selenoprotein_seqs"]
+	U_item["U(Sec)-containing homologs"]
+	C_item["C-containing homologs"]
+	UC_item["all_confirmed_selenoprotein_seqs"]
+	statistics_result["statistical_result"]
+
+    1_tblastn{1_tblastn}
+    2_translate{2_translate}
+	3_filter{3_filter}
+	4_del_TAG_TAA{4_del_TAG_TAA}
+	5_pick_same_subID{5_pick_same_subID}
+	6_del_zzzzzzz{6_del_zzzzzzz}
+	7_to_fasta{7_to_fasta}
+	8_blastp_nr{8_blastp_nr}
+	9_U_item{9_U_item,10_sel_UU<br/>11_UU_list<br/>12_non_UU_list_get}
+	13_sel_non_UU_order{13_sel_non_UU_order<br/>14_UC<br/>15_UC_if_one}
+	16_get_UU_UC_seq{16_get_UU_UC<br/>17_del_N_aster}
+	18_statistics{18_count1<br/>19_count2<br/>20_count3<br/>21_count5<br/>22_count6}
+	
+
+    query --> 1_tblastn
+    dataset --> 1_tblastn
+    1_tblastn --> tblastn_result
+
+    dataset --> 2_translate
+    tblastn_result --> 2_translate
+    2_translate --> translate_result
+
+	translate_result --> 3_filter
+	3_filter --> filter_result
+	filter_result --> 4_del_TAG_TAA
+	4_del_TAG_TAA --> del_the_TAG_TAA_coded_result
+	del_the_TAG_TAA_coded_result --> 5_pick_same_subID
+	5_pick_same_subID -->  nonredundant_seqs
+	nonredundant_seqs --> 6_del_zzzzzzz
+	6_del_zzzzzzz --> del_zzzzzzz 
+	del_zzzzzzz --> 7_to_fasta
+	7_to_fasta --> seqs_in_fasta_format 
+	seqs_in_fasta_format --> 8_blastp_nr
+	8_blastp_nr --> blastp_result
+	blastp_result --> 9_U_item
+	blastp_result --> 13_sel_non_UU_order 
+	9_U_item --> U_item
+	13_sel_non_UU_order --> C_item
+	U_item --> 16_get_UU_UC_seq
+	C_item --> 16_get_UU_UC_seq
+	16_get_UU_UC_seq --> UC_item
+	UC_item -->18_statistics 
+	18_statistics --> statistics_result 
+
+
+
+
+    classDef action fill:#f96,stroke:#333,stroke-width:4px;
+    class 1_tblastn,2_translate,3_filter,4_del_TAG_TAA,5_pick_same_subID,6_del_zzzzzzz,7_to_fasta,8_blastp_nr,9_U_item,13_sel_non_UU_order,16_get_UU_UC_seq,18_statistics action;
+
+  </div>
+</body>
+</html>

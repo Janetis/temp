@@ -2,8 +2,8 @@
 use strict;
 use warnings;
 
-open my $fh,"../result/Se_result_samples226/blastp_nr_20170721UU_UC_list.txt" or die $!;
-open my $out,">../result/Se_result_samples226/blastp_nr_20170721UU_UC_seq.txt" or die $!;
+open my $fh,"$out_dir/blastp_nr_20170721UU_UC_list.txt" or die $!;
+open my $out,">$out_dir/blastp_nr_20170721UU_UC_seq.txt" or die $!;
 
 my %hash;
 while(<$fh>){
@@ -11,7 +11,7 @@ while(<$fh>){
 	$hash{$_} = 1;
 }
 close $fh;
-open my $fh1,"../result/Se_result_samples226/pick_Se_20170721filter_delz_num.txt" or die $!;
+open my $fh1,"$out_dir/pick_Se_20170721filter_delz_num.txt" or die $!;
 while(<$fh1>){
 	s/\v//g;
 	my @line = split("\t",$_);

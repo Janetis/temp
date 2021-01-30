@@ -6,8 +6,8 @@ use warnings;
 
 
 ########################将alinment part 有交集的结果删重#####step3
-open my $fh,"../result/Ni_result_samples226/test_chongfu_full_sort.txt" or die $!;
-open my $out,">../result/Ni_result_samples226/test_chongfu_full_F.txt" or die $!;
+open my $fh,"$out_dir/test_chongfu_full_sort.txt" or die $!;
+open my $out,">$out_dir/test_chongfu_full_F.txt" or die $!;
 
 my $pre = '';
 while(<$fh>){
@@ -31,7 +31,7 @@ while(<$fh>){
 		}
 		my $little = $start."\t".$end;
 		push(@array,$little);
-		open my $fh1,"../result/Ni_result_samples226/test_chongfu_full_sort_1.txt" or die $!;
+		open my $fh1,"$out_dir/test_chongfu_full_sort_1.txt" or die $!;
 		while(<$fh1>){
 			s/\v//g;
 			next if $. <= $now;

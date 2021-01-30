@@ -4,8 +4,8 @@ use warnings;
 
 
 
-open my $fh,"../result/Mo_result_samples226/ppos20more_0721_minus40_other.txt" or die $!;
-open my $out,">../result/Mo_result_samples226/other_less3_fdhA_0721.txt" or die $!;
+open my $fh,"$out_dir/ppos20more_0721_minus40_other.txt" or die $!;
+open my $out,">$out_dir/other_less3_fdhA_0721.txt" or die $!;
 
 my %hash;
 while(<$fh>){
@@ -21,7 +21,7 @@ while(<$fh>){
 	print $out "$origin\n";
 }
 
-open my $fh2,"../result/Mo_result_samples226/trans_0721less3.txt" or die $!;
+open my $fh2,"$out_dir/trans_0721less3.txt" or die $!;
 
 while(<$fh2>){
 	s/\v//g;
@@ -36,7 +36,7 @@ while(<$fh2>){
 	print $out "$origin\n";
 }
 
-open my $fh3,"../result/Mo_result_samples226/fdhA_Mo226_trans0721filter_delz.txt" or die $!;
+open my $fh3,"$out_dir/fdhA_Mo226_trans0721filter_delz.txt" or die $!;
 
 while(<$fh3>){
 	s/\v//g;

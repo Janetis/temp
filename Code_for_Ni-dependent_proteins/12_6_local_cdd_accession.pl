@@ -5,7 +5,7 @@ use warnings;
 
 
 #####################去除evalue 有两个零的蛋白###step6
-open my $fh,"../result/Ni_result_samples226/hitdata_0913_delCd_min.txt" or die $!;
+open my $fh,"$out_dir/hitdata_0913_delCd_min.txt" or die $!;
 
 my %hash;
 my %hash_two;
@@ -21,8 +21,8 @@ while(<$fh>){
 	}
 }
 
-open my $fh1,"../result/Ni_result_samples226/hitdata_0913_delCd_min.txt" or die $!;
-open my $out,">../result/Ni_result_samples226/hitdata_0913_delCd_sec_min.txt" or die $!;
+open my $fh1,"$out_dir/hitdata_0913_delCd_min.txt" or die $!;
+open my $out,">$out_dir/hitdata_0913_delCd_sec_min.txt" or die $!;
 
 print $out "Ni_protein\taccession\tevalue\n";
 while(<$fh1>){

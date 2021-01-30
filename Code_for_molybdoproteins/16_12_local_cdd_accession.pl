@@ -4,8 +4,7 @@ use warnings;
 
 
 #
-############删去部分假阳性########
-open my $fh,"../result/Mo_result_samples226/COG3383NuoG.txt" or die $!;
+open my $fh,"$out_dir/COG3383NuoG.txt" or die $!;
 
 my %hash;
 while(<$fh>){
@@ -13,8 +12,8 @@ while(<$fh>){
 	$hash{$_} = 1;
 }
 
-open my $fh1,"../result/Mo_result_samples226/hitdata_0913_match_all.txt" or die $!;
-open my $out,">../result/Mo_result_samples226/hitdata_0913_match_all_del.txt" or die $!;
+open my $fh1,"$out_dir/hitdata_0913_match_all.txt" or die $!;
+open my $out,">$out_dir/hitdata_0913_match_all_del.txt" or die $!;
 
 while(<$fh1>){
 	s/\v//g;

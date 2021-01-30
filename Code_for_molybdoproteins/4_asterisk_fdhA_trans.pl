@@ -3,14 +3,14 @@ use strict;
 use warnings;
 
 my $xyz = 0;
-open my $fh,"../result/Mo_result_samples226/fdhA_Mo226_0721.txt" or die $!;
-open my $out,">../result/Mo_result_samples226/fdhA_Mo226_trans0721.txt" or die $!;
+open my $fh,"$out_dir/fdhA_Mo226_0721.txt" or die $!;
+open my $out,">$out_dir/fdhA_Mo226_trans0721.txt" or die $!;
 while(<$fh>){
 	s/\v//g;
 	my @line = split("\t",$_);
 	my $head = $_;
-	my $sample;  ####提取样本名称
-	my %hash;#用于提取用于翻译contig sequence
+	my $sample;  
+	my %hash;
 	my $key;
 	if($line[1] =~ /\w+,(GS\w+)/){
 		$sample = $1;
@@ -37,11 +37,11 @@ while(<$fh>){
 		$k = -1;
 	}
 	for my $i(0..$#letter_query){
-		if ($letter_query[$i] =~ /U/i and $letter_subject[$i] =~ /\*/) {  #如果aligned_query_seq中的U和aligned_subject_seq中的*对应上，记住位置，	        		
+		if ($letter_query[$i] =~ /U/i and $letter_subject[$i] =~ /\*/) {        		
 			$xyz++;
 			print $xyz."\n";
 			print $out "$head\t";
-			my $b;														 #并从上面hash里面提取核酸序列进行翻译                	
+			my $b;														           	
 			for my $j(0..$i){
 				if($letter_subject[$j] eq '-'){
 					$b++;

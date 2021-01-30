@@ -5,7 +5,7 @@ use warnings;
 
 #
 ####################33
-open my $fh,"../result/Co_result_samples226/chongfu_temp.txt" or die $!;
+open my $fh,"$out_dir/chongfu_temp.txt" or die $!;
 
 my %hash;
 while(<$fh>){
@@ -19,8 +19,8 @@ while(<$fh>){
 	$hash{$key} = 1;
 }
 
-open my $fh1,"../result/Co_result_samples226/hitdata_0721_match_full.txt" or die $!;
-open my $out,">../result/Co_result_samples226/chongfu_full_longer.txt" or die $!;
+open my $fh1,"$out_dir/hitdata_0721_match_full.txt" or die $!;
+open my $out,">$out_dir/chongfu_full_longer.txt" or die $!;
 
 my %hash_new;
 my %hash_full;

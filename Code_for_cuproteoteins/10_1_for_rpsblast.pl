@@ -1,8 +1,9 @@
 #!perl
 use strict;
 use warnings;
-use lib "/home/xyz/xyz";
-use myfile;
+use lib dirname(__FILE__);
+use Miscellany qw( list_all_files );
+
 
 `mkdir for_rpsblast_pl0721_Cu226`;
 my $file_name = '/home/xyz/data/for_rpsblast_query0721_Cu226/trans_0721';

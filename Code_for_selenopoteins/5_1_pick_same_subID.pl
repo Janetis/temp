@@ -3,8 +3,8 @@ use strict;
 use warnings;
 
 ######step1#################################################################
-open my $fh,"../result/Se_result_samples226/pick_Se_20170721filter_del.txt" or die $!;
-open my $out,">../result/Se_result_samples226/filter_del_temp.txt" or die $!;
+open my $fh,"$out_dir/pick_Se_20170721filter_del.txt" or die $!;
+open my $out,">$out_dir/filter_del_temp.txt" or die $!;
 my %hash;
 while(<$fh>){
 	s/\v//g;

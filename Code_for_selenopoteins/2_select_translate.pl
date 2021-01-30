@@ -5,7 +5,7 @@ use File::Basename;
 use Data::Dumper;
 
 
-open OUT,">../result/Se_result_samples226/pick_Se_20170721.txt" or die $!;
+open OUT,">$out_dir/pick_Se_20170721.txt" or die $!;
 sub list_all_files{
     my $dirname = shift;
     opendir(my $dh, $dirname) or die $!;
@@ -31,7 +31,7 @@ for my $file(grep{m/GS/} list_all_files("../runCA_226asm_arr")){
 			$hash{$key} = $_;
 		}
 	}
-	for my $file2(grep{m/\Q$myfile\E$/} list_all_files("../result/Se_result_samples226/tblastn_226arr_result")){
+	for my $file2(grep{m/\Q$myfile\E$/} list_all_files("$out_dir/tblastn_226arr_result")){
 		for my $file3(grep{m/_20170721\.out$/} list_all_files($file2)){
 			open my $fh2,"$file3" or die $!;
 			while(<$fh2>){									

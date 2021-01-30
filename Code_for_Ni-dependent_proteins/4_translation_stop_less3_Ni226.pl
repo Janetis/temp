@@ -4,8 +4,8 @@ use warnings;
 
 
 ####################翻译含有stop codon的结果#######
-open my $fh,"../result/Ni_result_samples226/ppos20more_0721_less3.txt" or die $!;
-open my $out,">../result/Ni_result_samples226/trans_0721less3.txt" or die $!;
+open my $fh,"$out_dir/ppos20more_0721_less3.txt" or die $!;
+open my $out,">$out_dir/trans_0721less3.txt" or die $!;
 
 while(<$fh>){
 	my @asteri_pos;

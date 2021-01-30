@@ -4,10 +4,10 @@ use warnings;
 use File::Basename;
 use Data::Dumper;
 
-open FILE,"../result/Se_result_samples226/blastp_nr_20170721_U.out" or die $!;
- open OUT,">../result/Se_result_samples226/blastp_nr_20170721_UU.txt" or die $!;
- open OUTII,">../result/Se_result_samples226/blastp_nr_20170721_UUother.txt" or die $!;
- open OUTIII,">../result/Se_result_samples226/blastp_nr_20170721_UUother1.txt" or die $!;
+open FILE,"$out_dir/blastp_nr_20170721_U.out" or die $!;
+ open OUT,">$out_dir/blastp_nr_20170721_UU.txt" or die $!;
+ open OUTII,">$out_dir/blastp_nr_20170721_UUother.txt" or die $!;
+ open OUTIII,">$out_dir/blastp_nr_20170721_UUother1.txt" or die $!;
 
 while(<FILE>){
 	s/\v//g;

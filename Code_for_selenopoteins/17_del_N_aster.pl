@@ -3,9 +3,9 @@ use strict;
 use warnings;
 
 
-open my $fh,"../result/Se_result_samples226/blastp_nr_20170721UU_UC_seq.txt" or die $!;
-open my $out,">../result/Se_result_samples226/blastp_nr_20170721UU_UC_delN.txt" or die $!;
-open my $out1,">../result/Se_result_samples226/del_N.txt" or die $!;
+open my $fh,"$out_dir/blastp_nr_20170721UU_UC_seq.txt" or die $!;
+open my $out,">$out_dir/blastp_nr_20170721UU_UC_delN.txt" or die $!;
+open my $out1,">$out_dir/del_N.txt" or die $!;
 
 while(<$fh>){
 	s/\v//g;

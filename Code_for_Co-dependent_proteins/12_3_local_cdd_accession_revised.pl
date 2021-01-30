@@ -5,8 +5,8 @@ use warnings;
 
 ##########################
 ###########step3###########
-open my $fh1,"../result/Co_result_samples226/hitdata_0721_delCd.txt" or die $!;
-open my $out,">../result/Co_result_samples226/hitdata_0721_delCd_min.txt" or die $!;
+open my $fh1,"$out_dir/hitdata_0721_delCd.txt" or die $!;
+open my $out,">$out_dir/hitdata_0721_delCd_min.txt" or die $!;
 my %hash;
 my %hash_e;
 my %hash_acc;
